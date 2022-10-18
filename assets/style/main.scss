@@ -1,48 +1,135 @@
-$purple: #563AD6;
-$aqua: #3ABAD6;
-$navy: #02044A;
-$white: #ffffff;
-$sofpur: #EAEAF4;
-$darpur: #777790;
-$medpur: #B4B5C9;
-$lilpur: #F9F9FB;
-$newpur: #9B9CB7;
-$font-weights:( "regular": 400, "medium": 500, "semibold": 600);
-body {
-    font-family: 'Rubik', sans-serif;
-}
-
-.sales {
-    .copywriting {
-        .header {
-            font-weight: map-get($font-weights, "semibold");
-            color: $navy;
-            font-size: 46px;
-            line-height: 60px;
-        }
-        .description {
-            font-weight: map-get($font-weights, "regular");
-            color: $newpur;
-            font-size: 18px;
-            line-height: 30px;
-        }
-    }
-}
-
-.navbar-tp {
-    padding-top: 30px;
-    .navbar-nav {
-        li {
-            padding-left: 50px;
-        }
-        .active {
-            color: $purple !important;
-            font-weight: map-get($font-weights, "medium") !important;
-        }
-        .nav-link {
-            color: $navy;
-            font-weight: map-get($font-weights, "regular");
-            ;
-        }
-    }
-}
+            @import './colors';
+            @import './buttons';
+            @import './typo';
+            body {
+                font-family: 'Rubik', sans-serif;
+            }
+            
+            .pricing {
+                background-color: $lilpur;
+                padding: 0 0 70px 0;
+                margin-top: 70px;
+                .master-card {
+                    padding: 30px;
+                    border-radius: 22px;
+                    .btn {
+                        width: 100%;
+                        margin-top: 20px;
+                    }
+                    .item-benefits {
+                        margin-bottom: 20px;
+                        img {
+                            float: left;
+                            margin-right: 8px;
+                        }
+                        p {
+                            font-size: 16px;
+                            font-weight: map-get($font-weights, "medium");
+                        }
+                    }
+                    .name {
+                        font-size: 18px;
+                        font-weight: map-get($font-weights, "medium");
+                    }
+                    .price {
+                        font-size: 36px;
+                        font-weight: map-get($font-weights, "semibold");
+                        margin-top: 16px;
+                        margin-bottom: 16px;
+                    }
+                    .support {
+                        font-size: 16px;
+                        font-weight: map-get($font-weights, "regular");
+                        margin-bottom: 40px;
+                    }
+                }
+                .basic-card {
+                    @extend .master-card;
+                    background: $white;
+                    .name {
+                        color: $navy;
+                    }
+                    .price {
+                        color: $navy;
+                    }
+                    .support {
+                        color: $newpur;
+                    }
+                    .item-benefits {
+                        p {
+                            color: $navy;
+                        }
+                    }
+                }
+                .most-card {
+                    @extend .master-card;
+                    background: $purple;
+                    .name {
+                        color: $white;
+                    }
+                    .price {
+                        color: $white;
+                    }
+                    .support {
+                        color: $supportpur;
+                    }
+                    .item-benefits {
+                        p {
+                            color: $white;
+                        }
+                    }
+                    .btn {
+                        color: $white;
+                        background-color: $aqua;
+                    }
+                }
+            }
+            
+            .header {
+                font-weight: map-get($font-weights, "semibold");
+                color: $navy;
+                font-size: 46px;
+                line-height: 60px;
+                margin-top: 100px;
+            }
+            
+            .description {
+                font-weight: map-get($font-weights, "regular");
+                color: $newpur;
+                font-size: 18px;
+                line-height: 30px;
+                margin-top: 20px;
+                margin-bottom: 40px;
+            }
+            
+            .sales {
+                padding-top: 80px;
+                .brand {
+                    margin-top: 70px;
+                    text-align: center;
+                    .brand-logos {
+                        width: 724px;
+                    }
+                }
+                .copywriting {
+                    padding-left: 110px;
+                }
+            }
+            
+            .navbar-tp {
+                padding-top: 30px;
+                .navbar-nav {
+                    li {
+                        padding-left: 50px;
+                    }
+                    .active {
+                        color: $purple !important;
+                        font-weight: map-get($font-weights, "medium") !important;
+                    }
+                    .nav-link {
+                        font-size: 16px !important;
+                        color: $navy;
+                        font-weight: map-get($font-weights, "regular");
+                    }
+                }
+            }
